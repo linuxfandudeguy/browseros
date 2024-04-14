@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrowserOS</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://img.freepik.com/premium-photo/cool-wallpapers_947865-15226.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+    #desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 40px); /* Adjusted for the time and date section */
+    }
+    #time-date {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace; /* New font */
+    }
+    .icon {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .icon:hover {
+        transform: scale(1.1);
+    }
+    .icon img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
+</head>
+<body>
+<div id="desktop">
+    <div class="icon" onclick="openInNewWindow('https://darin755.github.io/browser-linux/src/')">
+        <img src="https://cdn-icons-png.freepik.com/512/10922/10922547.png" alt="Terminal Icon">
+    </div>
+    <div class="icon" onclick="openInNewWindow('https://www.google.com/')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Icon">
+    </div>
+    <div class="icon" onclick="openInNewWindow('https://tinyfilemanager.github.io/demo/')">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bce61c2d-f08e-4cff-ab33-6360bdffd6e8/dejrefj-aca41e18-f2bd-4df9-8df5-d4820f97b128.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JjZTYxYzJkLWYwOGUtNGNmZi1hYjMzLTYzNjBiZGZmZDZlOFwvZGVqcmVmai1hY2E0MWUxOC1mMmJkLTRkZjktOGRmNS1kNDgyMGY5N2IxMjgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.q8wJw_FLnnxHUBV9w-DjsgSJH9J1VwEePu4BbwY7nAE" alt="File Manager Icon">
+    </div>
+    <div class="icon" onclick="openInNewWindow('https://onlinenotepad.org/notepad')">
+        <img src="https://64.media.tumblr.com/5b721f82bf458ec88d5e81c8a0e6c00f/d54cc7b03470c013-98/s540x810/3b87d2f3fe16c2b605250c6ee952dd773003d21b.png" alt="Notepad Icon">
+    </div>
+</div>
+
+<div id="time-date">
+    <p id="time"></p>
+    <p id="date"></p>
+</div>
+
+<script>
+    function openInNewWindow(url) {
+        window.open(url, '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100,width=800,height=600');
+    }
+
+    function updateTimeAndDate() {
+        const now = new Date();
+        const timeElement = document.getElementById('time');
+        const dateElement = document.getElementById('date');
+        
+        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const dateString = now.toDateString();
+        
+        timeElement.textContent = timeString;
+        dateElement.textContent = dateString;
+    }
+
+    updateTimeAndDate(); // Update time and date initially
+
+    // Update time and date every second
+    setInterval(updateTimeAndDate, 1000);
+</script>
+</body>
+</html>

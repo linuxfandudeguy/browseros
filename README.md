@@ -1,4 +1,3 @@
-BrowserOS is an experiment to try to make the most realistic looking OS in HTML
+BrowserOS is an experiment to try to make the most realistic looking OS in HTML.
 
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/48f3a30c-85d3-4ed3-85a6-87ba3e71f2a2/deploy-status)](https://app.netlify.com/sites/browser-os1/deploys)
+![Static Badge](https://img.shields.io/badge/the_os_is_here-blue?style=flat&logoColor=%23AEC6CF&link=https%3A%2F%2Fbrowser-os1.netlify.app%2F)
